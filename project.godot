@@ -15,6 +15,15 @@ run/main_scene="uid://cyqmpvb35pf2g"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[display]
+
+mouse_cursor/custom_image="uid://di7mqh10385vj"
+mouse_cursor/custom_image_hotspot=Vector2(16, 16)
+
+[global_group]
+
+enemies=""
+
 [input]
 
 left={
@@ -50,4 +59,5 @@ absorb_blood={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"

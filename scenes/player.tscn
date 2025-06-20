@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://csfc7y0slwx52"]
 
-[ext_resource type="Script" uid="uid://b6ctcawyxsp40" path="res://character_body_2d.gd" id="1_g2els"]
+[ext_resource type="Script" uid="uid://b6ctcawyxsp40" path="res://scripts/character_body_2d.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://bgnu81fgby0il" path="res://icon.svg" id="2_qhqgy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
@@ -9,6 +9,7 @@ size = Vector2(142, 142)
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.25, 0.25)
 script = ExtResource("1_g2els")
+SPEED = 1000.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_dqkch")
