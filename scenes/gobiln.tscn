@@ -1,21 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://drgdshp1h64v"]
+[gd_scene load_steps=5 format=3 uid="uid://drgdshp1h64v"]
 
 [ext_resource type="Script" uid="uid://bdefipaqxyio3" path="res://scripts/gobiln.gd" id="1_g7g7t"]
 [ext_resource type="Texture2D" uid="uid://bodvi34m573d1" path="res://goblin_icon.png" id="2_4hyj7"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g7g7t"]
+size = Vector2(96, 104)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7i380"]
-size = Vector2(138, 138)
+size = Vector2(120, 120)
 
 [node name="Gobiln" type="CharacterBody2D" groups=["enemies"]]
 scale = Vector2(0.25, 0.25)
-collision_layer = 3
+collision_layer = 2
 script = ExtResource("1_g7g7t")
 speed = 800.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_g7g7t")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_4hyj7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_7i380")
 
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

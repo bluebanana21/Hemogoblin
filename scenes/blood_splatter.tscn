@@ -1,6 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://dgaiwp1faqdv6"]
+[gd_scene load_steps=4 format=3 uid="uid://dgaiwp1faqdv6"]
 
 [ext_resource type="Texture2D" uid="uid://2pq8f2t52fif" path="res://assets/art/blood_splatter.png" id="1_4ixp3"]
+[ext_resource type="Script" uid="uid://bk7yra4ux8aua" path="res://scripts/blood_splatter.gd" id="2_jhjh3"]
 
-[node name="BloodSplatter" type="Sprite2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_jhjh3"]
+radius = 15.0
+
+[node name="BloodSplatter" type="Area2D" groups=["blood splatters"]]
+collision_layer = 4
+script = ExtResource("2_jhjh3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_jhjh3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_4ixp3")

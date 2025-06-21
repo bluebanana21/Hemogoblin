@@ -7,12 +7,8 @@
 radius = 3.0
 
 [node name="Bullet" type="Area2D"]
-collision_layer = 0
-collision_mask = 2
+collision_mask = 3
 script = ExtResource("1_y25gk")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_mkf8s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_mkf8s")
@@ -21,6 +17,9 @@ texture = ExtResource("1_mkf8s")
 wait_time = 5.0
 one_shot = true
 autostart = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mkf8s")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
